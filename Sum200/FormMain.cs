@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Author : Allen Benusa
+// Date   : 2020-09-17
+// Sum200
+// New feature of top value added.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +24,14 @@ namespace Sum200
         private void btnStart_Click(object sender, EventArgs e)
         {
             int sum = 0;
+            int topValue;
 
-            for (int i = 0; i <= 200; i++)  // ++i vs i++
+            topValue = Convert.ToInt32(txtTopValue.Text);
+
+            for (int i = 0; i <= topValue; i++)  // ++i vs i++
             {
                 sum += i; // shorthand for sum = sum + i
-                if (i == 100) txtHalfWay.Text = Convert.ToString(sum);
+                if (i == topValue/2) txtHalfWay.Text = Convert.ToString(sum);
                 //Console.WriteLine("i = " + i + "  sum = " + sum);
             }
 
